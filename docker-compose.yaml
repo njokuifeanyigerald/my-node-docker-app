@@ -13,6 +13,7 @@ services:
      -  MONGO_INITDB_ROOT_PASSWORD=password
     volumes:
       - mongo-data:/data/db  # database entry
+    
   mongo-express: #name of the container
     image: mongo-express #image of the container
     ports:
