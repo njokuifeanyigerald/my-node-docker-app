@@ -38,15 +38,20 @@ pipeline {
 
                 }
             }
-            script{
-                gv.testApp()
-                
+            steps{
+                script {
+                   gv.testApp()
+              }
             }
+            
         }
         stage("deploy"){
-            script{
-                gv.deployApp()
+            steps{
+                script {
+                    gv.deployAPP()
+                }
             }
+            
         }
     }
     
