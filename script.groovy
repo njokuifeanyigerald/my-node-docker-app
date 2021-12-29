@@ -1,10 +1,11 @@
 def buildApp(){
     echo ' building the application...'
     // nodejs('node-17'){
-        // in linux use 'sh' while in windows use 'bat'
+    //     in linux use 'sh' while in windows use 'bat'
     //     sh 'yarn install '
     // }
-    bat 'npm install'
+    // bat 'npm install'
+    sh 'yarn install '
 }
 
 def testApp(){
