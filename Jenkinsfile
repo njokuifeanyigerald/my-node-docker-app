@@ -7,7 +7,7 @@ def gv
 
 pipeline {
     agent any 
-
+    // clc
     tools { nodejs "node"}
     
     // when tryna select a  specific version that is a external conguration
