@@ -31,7 +31,6 @@ pipeline {
                     gv.buildApp()
                 }
                 
-                
             }
         }
         stage("test"){
