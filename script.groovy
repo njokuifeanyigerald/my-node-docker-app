@@ -4,14 +4,14 @@ def buildApp(){
         // in linux use 'sh' while in windows use 'bat'
     //     sh 'yarn install '
     // }
-    sh 'yarn install'
+    bat 'npm install'
 }
 
 def testApp(){
     echo ' test the application...'
-    withGradle(){
-        sh './gradlew -v'
-    }
+    // withGradle(){
+    //     sh './gradlew -v'
+    // }
 }
 
 def deployApp(){

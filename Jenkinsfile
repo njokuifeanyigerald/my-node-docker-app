@@ -7,7 +7,7 @@ def gv
 
 pipeline {
     agent any 
-    tools {nodejs "node-17"}
+    tools {nodejs "Nodejs-17.3.0"}
 
     
     // when tryna select a  specific version that is a external conguration
