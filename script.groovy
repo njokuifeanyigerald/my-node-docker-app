@@ -3,7 +3,7 @@ def buildApp(){
     // nodejs('node-17'){
     //     sh 'yarn install '
     // }
-    sh 'yarn install'
+    bat 'yarn install'
 }
 
 def testApp(){
