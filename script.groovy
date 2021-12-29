@@ -5,7 +5,7 @@ def buildApp(){
     //     sh 'yarn install '
     // }
     // bat 'npm install'
-    sh 'npm install '
+    bat 'npm install '
 }
 
 def testApp(){
