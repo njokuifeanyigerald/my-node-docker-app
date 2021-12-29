@@ -5,14 +5,14 @@ def buildApp(){
     //     sh 'yarn install '
     // }
     // bat 'npm install'
-    sh 'yarn install '
+    sh 'npm install '
 }
 
 def testApp(){
     echo ' test the application...'
-    // withGradle(){
-    //     sh './gradlew -v'
-    // }
+    withGradle(gradle: 'gradle-7.3.3'){
+        bat './gradlew -v'
+    }
 }
 
 def deployApp(){
