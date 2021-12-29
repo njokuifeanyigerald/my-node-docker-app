@@ -21,12 +21,16 @@ pipeline {
                 script {
                     gv  = load "script.groovy"
                 }
+
             }
         }
         stage("build"){
             steps{
                 script {
                     gv.buildApp()
+                }
+                nodejs("node-15.6.0"){
+                    sh "yarn install"
                 }
             }
         }

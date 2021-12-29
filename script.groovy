@@ -1,8 +1,6 @@
 def buildApp(){
     echo ' building the application...'
-    nodejs("node-15.6.0"){
-        sh "yarn install"
-    }
+    
 }
 
 def testApp(){
