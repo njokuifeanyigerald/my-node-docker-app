@@ -4,13 +4,13 @@ def buildApp(){
         // in linux use 'sh' while in windows use 'bat'
     //     sh 'yarn install '
     // }
-    bat 'yarn install'
+    sh 'yarn install'
 }
 
 def testApp(){
     echo ' test the application...'
     withGradle(){
-        bat './gradlew -v'
+        sh './gradlew -v'
     }
 }
 
