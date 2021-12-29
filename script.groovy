@@ -10,9 +10,9 @@ def buildApp(){
 
 def testApp(){
     echo ' test the application...'
-    withGradle(gradle: 'gradle-7.3.3'){
-        bat './gradlew -v'
-    }
+    // withGradle(gradle: 'gradle-7.3.3'){
+    //     bat './gradlew -v'
+    // }
 }
 
 def deployApp(){

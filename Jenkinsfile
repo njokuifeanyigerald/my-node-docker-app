@@ -1,6 +1,6 @@
-// CODE_CHANGES = getGitChanges()
+// // CODE_CHANGES = getGitChanges()
 
-// making it a global variable
+// // making it a global variable
 
 def gv
 
@@ -59,3 +59,5 @@ pipeline {
         }
     }
 }
+
+
