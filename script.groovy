@@ -1,8 +1,8 @@
 def buildApp(){
     echo ' building the application...'
-    nodejs('Nodejs-17.3.0'){
-        sh 'yarn install '
-    }
+    // nodejs('Nodejs-17.3.0'){
+    //     sh 'yarn install '
+    // }
 }
 
 def testApp(){
