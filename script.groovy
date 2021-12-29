@@ -1,8 +1,9 @@
 def buildApp(){
     echo ' building the application...'
-    nodejs('node-17'){
-        sh 'yarn install '
-    }
+    // nodejs('node-17'){
+    //     sh 'yarn install '
+    // }
+    sh 'yarn install'
 }
 
 def testApp(){
