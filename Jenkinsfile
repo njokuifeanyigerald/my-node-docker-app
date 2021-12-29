@@ -1,7 +1,10 @@
 // CODE_CHANGES = getGitChanges()
 
 // making it a global variable
-def  gv
+
+def gv
+
+
 pipeline {
     agent any 
     
@@ -27,7 +30,7 @@ pipeline {
                 }
             }
         }
-        stage('test'){
+        stage("test"){
             // the stage will nly excute when it meets the criteria
             when {
                 expression {
@@ -37,9 +40,10 @@ pipeline {
             }
             script{
                 gv.testApp()
+                
             }
         }
-        stage('deploy'){
+        stage("deploy"){
             script{
                 gv.deployApp()
             }
