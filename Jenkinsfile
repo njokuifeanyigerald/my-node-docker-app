@@ -1,4 +1,4 @@
-CODE_CHANGES = getGitChanges()
+// CODE_CHANGES = getGitChanges()
 pipeline {
     agent any 
     environment {
@@ -32,7 +32,7 @@ pipeline {
             // the stage will nly excute when it meets the criteria
             when {
                 expression {
-                    BRANCH_NAME == 'master' && CODE_CHANGES == true
+                    // BRANCH_NAME == 'master' && CODE_CHANGES == true
                     params.executeTests
 
                 }
