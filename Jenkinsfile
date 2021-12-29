@@ -46,12 +46,12 @@ pipeline {
             steps{
                 // better with double qoute
                 echo 'deploying the app'
-                withCredentials([
-                    // take the usernameand store it into a variable
-                    usernamePassword(credentials: 'server-credentials', usernameVariable: USER, passwordVariable: PWD)
-                ]) {
-                    sh "some script "
-                }           
+                // withCredentials([
+                //     // take the usernameand store it into a variable
+                //     usernamePassword(credentials: 'server-credentials', usernameVariable: USER, passwordVariable: PWD)
+                // ]) {
+                //     sh "some script "
+                // }           
                 echo "eploying  version ${params.VERSION}"
             }
         }
