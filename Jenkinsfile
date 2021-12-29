@@ -1,18 +1,10 @@
 // CODE_CHANGES = getGitChanges()
+
+// making it a global variable
+def  gv
 pipeline {
     agent any 
-    environment {
-        NEW_VERSION = '1.0'
-        // how to extract creddential frrom jenkins
-        // have to install credntial binding plugin
-        SERVER_CREDENTIALS = credentials('server-credential')
-    }
-    // tools {
-    //     maven 'Maven'
-    //     gradle 'Gradle'
-
-    // }
-
+    
     // when tryna select a  specific version that is a external conguration
     parameters {
         // string and booleanParam are almost the d same so you have to delete one
@@ -21,11 +13,18 @@ pipeline {
         booleanParam(name: 'executeTests', defaultValue: true, description: '')
     }
     stages {
+        stage ("init"){
+            steps{
+                script {
+                    gv  = load "script.grovy"
+                }
+            }
+        }
         stage("build"){
             steps{
-                echo 'building the app'
-                echo "building version ${NEW_VERSION}"
-
+                script {
+                    gv.buildApp()
+                }
             }
         }
         stage('test'){
@@ -36,72 +35,15 @@ pipeline {
 
                 }
             }
-            steps{
-                echo 'testing the app'
-                
-
+            script{
+                gv.testApp()
             }
         }
         stage('deploy'){
-            steps{
-                // better with double qoute
-                echo 'deploying the app'
-                // withCredentials([
-                //     // take the usernameand store it into a variable
-                //     usernamePassword(credentials: 'server-credentials', usernameVariable: USER, passwordVariable: PWD)
-                // ]) {
-                //     sh "some script "
-                // }           
-                echo "eploying  version ${params.VERSION}"
+            script{
+                gv.deployApp()
             }
         }
     }
-    // post{
-    //     always{
-    //         echo "====++++always++++===="
-    //         // it will be always excuted regardless of failure
-    //     }
-    //     success{
-    //         echo "====++++only when successful++++===="
-    //     }
-    //     failure{
-    //         echo "====++++only when failed++++===="
-    //     }
-    // }
+    
 }
-
-
-// pipeline{
-//     agent{
-//         label "node"
-//     }
-//     stages{
-//         stage("A"){
-//             steps{
-//                 echo "========executing A========"
-//             }
-//             post{
-//                 always{
-//                     echo "========always========"
-//                 }
-//                 success{
-//                     echo "========A executed successfully========"
-//                 }
-//                 failure{
-//                     echo "========A execution failed========"
-//                 }
-//             }
-//         }
-//     }
-//     post{
-//         always{
-//             echo "========always========"
-//         }
-//         success{
-//             echo "========pipeline executed successfully ========"
-//         }
-//         failure{
-//             echo "========pipeline execution failed========"
-//         }
-//     }
-// }
