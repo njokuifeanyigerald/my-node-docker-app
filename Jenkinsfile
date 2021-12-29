@@ -7,6 +7,8 @@ def gv
 
 pipeline {
     agent any 
+
+    tools { nodejs "Nodejs-17.3.0"}
     
     // when tryna select a  specific version that is a external conguration
     parameters {
@@ -29,9 +31,9 @@ pipeline {
                 script {
                     gv.buildApp()
                 }
-                nodejs("node-15.6.0"){
-                    sh "yarn install"
-                }
+                
+                sh "yarn install"
+                
             }
         }
         stage("test"){
