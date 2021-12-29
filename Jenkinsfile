@@ -32,7 +32,6 @@ pipeline {
             // the stage will nly excute when it meets the criteria
             when {
                 expression {
-                    // BRANCH_NAME == 'master' && CODE_CHANGES == true
                     params.executeTests
 
                 }
