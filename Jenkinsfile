@@ -6,6 +6,7 @@ def gv
 
 
 pipeline {
+    // any means it can execute anywhere
     agent any 
     tools {nodejs "Nodejs-17.3.0"}
 
