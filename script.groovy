@@ -1,18 +1,17 @@
 def buildApp(){
     echo ' building the application...'
-    // nodejs('node-17'){
-    //     in linux use 'sh' while in windows use 'bat'
-    //     sh 'yarn install '
-    // }
+    nodejs('node-17'){
+        in linux use 'sh' while in windows use 'bat'
+        sh 'yarn install '
+    }
     // bat 'npm install'
-    bat 'npm install '
 }
 
 def testApp(){
     echo ' test the application...'
-    // withGradle(gradle: 'gradle-7.3.3'){
-    //     bat './gradlew -v'
-    // }
+    withGradle(){
+        sh './gradlew -v'
+    }
 }
 
 def deployApp(){
