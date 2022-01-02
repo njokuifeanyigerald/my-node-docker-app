@@ -4,7 +4,7 @@ def buildApp(){
     //     in linux use 'sh' while in windows use 'bat'
     //     sh 'yarn install '
     // }
-    sh 'yarn install'
+    sh 'npm install'
     // bat 'npm install '
 }
 
