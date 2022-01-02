@@ -11,7 +11,7 @@ def buildApp(){
 def testApp(){
     echo ' test the application...'
     withGradle(){
-        sh './gradlew clean build'
+        sh './gradlew -v'
     }
 }
 
