@@ -8,7 +8,7 @@ def gv
 pipeline {
     // any means it can execute anywhere
     agent any 
-    // tools {nodejs "Nodejs-17.3.0"}
+    tools {nodejs "Nodejs-17.3.0"}
 
     
     // when tryna select a  specific version that is a external conguration
